@@ -17,19 +17,25 @@ export default function page({params}) {
   const currentId = params.id.split('__')[3];
   const userId = params.id.split('__')[4];
   const plan= params.id.split('__')[5];
+  const initial = params.id.split('__')[6];
   const [selectedOption, setSelectedOption] = useState('');
   const [address, setAddress] = useState("");
   const [loading , setLoading] = useState(false);
   const [amount, setAmount] = useState('');
   const [enablebtn, setEnablebtn] = useState(false)
+  const profit = currentAmount - initial;
 
   useEffect(()=>{
-    if(!address || !selectedOption ||  !amount || parseFloat(currentAmount)<amount){
+    if(!address || !selectedOption ||  !amount){
       setEnablebtn(false);
+      if(amount > profit){
+        setEnablebtn(false);
+        alert("You can't withdraw more than your profit");
+      };
     }else{
       setEnablebtn(true);
     }
-   },[address, amount, currentAmount, selectedOption]);
+   },[address, amount, profit, selectedOption]);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
