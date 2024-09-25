@@ -14,6 +14,7 @@ import { AuthContext } from '@/context/AuthContext';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '@/firebase';
 import Empty from '@/components/Empty';
+import Script from 'next/script';
 
 
 
@@ -180,6 +181,15 @@ export default function page() {
 
   
   return (
+    <>
+       <Script
+        id="tawkto"
+        strategy="lazyOnload"
+        src="https://embed.tawk.to/66f01ca84cbc4814f7dd344f/default"
+        onLoad={() => {
+          console.log('Tawk.to script loaded');
+        }}
+      />
     <div className='flex w-full'>
       <Sidebar title={'dashboard'}/>
       <div className='w-full'>
@@ -203,6 +213,7 @@ export default function page() {
          </div>
       </div>
     </div>
+      </>
   )
 }
  
