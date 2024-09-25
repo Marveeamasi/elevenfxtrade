@@ -83,7 +83,7 @@ function handleUpdateCurrent(){
   
 
   return (
-    <Link href={'/withdraw/'+currentAmount+'__'+overdue+'__'+underdue+'__'+id+'__'+user+'__'+plan} className={`rounded-lg ${bgCol} p-5 flex flex-col gap-5 text-[#eee]`}>
+    <Link href={'/withdraw/'+currentAmount+'__'+overdue+'__'+underdue+'__'+id+'__'+user+'__'+plan+'__'+initial} className={`rounded-lg ${bgCol} p-5 flex flex-col gap-5 text-[#eee]`}>
       <h1 className='text-sm text=[#a2a1ab]'>{plan}</h1>
       <div className='text-[#eee] text-center'>{overdue
           ? `Overdue by ${overdue} day(s)`
