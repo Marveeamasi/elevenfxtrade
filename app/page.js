@@ -9,6 +9,7 @@ import Hero from '@/components/Hero'
 import HowItWorks from '@/components/HowItWorks'
 import Plans from '@/components/Plans'
 import Testimony from '@/components/Testimony'
+import Script from 'next/script'
 import { useEffect, useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -72,6 +73,15 @@ export default function page() {
   }, [data, notifications]);
 
   return (
+    <>
+    <Script
+        id="tawkto"
+        strategy="lazyOnload"
+        src="https://embed.tawk.to/66f01ca84cbc4814f7dd344f/default"
+        onLoad={() => {
+          console.log('Tawk.to script loaded');
+        }}
+      />
     <div className='bg-contain bg-no-repeat' style={{backgroundImage: `url('background2.webp')`}}>
     <Header/>
     <div id='home'>
@@ -93,5 +103,6 @@ export default function page() {
     <Footer/>
     <ToastContainer />
     </div>
+    </>
   )
 }
