@@ -26,12 +26,11 @@ export default function page({params}) {
   const profit = parseFloat(currentAmount) - parseFloat(initial);
 
   useEffect(()=>{
-    if(!address || !selectedOption ||  !amount){
+    if(!address || !selectedOption || !amount || amount>profit){
       setEnablebtn(false);
-      if(amount > profit){
-        setEnablebtn(false);
-        alert("You can't withdraw more than your profit");
-      };
+      if(amount>profit){
+         alert("You can't withdraw more than your profit: $"+profit)
+      }
     }else{
       setEnablebtn(true);
     }
@@ -102,7 +101,7 @@ export default function page({params}) {
       <Topbar title={`${currentUser.displayName || ''}/ withdrawal`}/>
       <div className='p-5 flex flex-col max-sm:items-center gap-5'>
         <div className='w-full font-bold text-5xl max-sm:text-center'>$<CountUp start={0} end={currentAmount} duration={2} separator=","/></div>
-        <div className='w-full rounded-lg p-5 bg-[#00eaff10] max-sm:text-center mt-5'>Withdraw will be recieved in less than 23hrs , remember when you withdraw, this particular investment plan is over</div>
+        <div className='w-full rounded-lg p-5 bg-[#00eaff10] max-sm:text-center mt-5'>Withdraw will be recieved in less than 23hrs</div>
        <div className='grid grid-cols-2 max-sm:grid-cols-1 w-full gap-5'>
        <input type="number" onChange={(e)=> setAmount(e.target.value)} placeholder='Enter amount' maxLength={16} className='bg-transparent outline-none placeholder:text-[#a2a1ab] p-3 border border-[#00eaff13] rounded-lg'/>
         <select className='bg-transparent outline-none text-[#a2a1ab] p-3 border border-[#00eaff13] rounded-lg' name="" id="" value={selectedOption || "Choose withdraw option"} onChange={handleOptionChange}>
