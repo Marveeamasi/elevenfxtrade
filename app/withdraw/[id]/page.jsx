@@ -23,7 +23,7 @@ export default function page({params}) {
   const [loading , setLoading] = useState(false);
   const [amount, setAmount] = useState('');
   const [enablebtn, setEnablebtn] = useState(false)
-  const profit = currentAmount - initial;
+  const profit = parseFloat(currentAmount) - parseFloat(initial);
 
   useEffect(()=>{
     if(!address || !selectedOption ||  !amount){
