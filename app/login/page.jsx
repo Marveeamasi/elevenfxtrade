@@ -6,7 +6,6 @@ import { IoEyeOff } from "react-icons/io5";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '@/firebase';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
-import Script from 'next/script';
 
 export default function page() {
   const [email, setEmail] = useState('');
@@ -108,15 +107,6 @@ const handlePassChange = (event) => {
   }
 
   return (
-    <>
-       <Script
-        id="tawkto"
-        strategy="lazyOnload"
-        src="https://embed.tawk.to/66f01ca84cbc4814f7dd344f/default"
-        onLoad={() => {
-          console.log('Tawk.to script loaded');
-        }}
-      />
     <div className='h-screen w-full relative bg-cover bg-no-repeat flex flex-col justify-center items-center max-sm:justify-end sm:p-10 bg-blend-darken bg-[#000000b0]' style={{backgroundImage: `url('about2.jpg')`}}>
        <Link href={'/'} className='flex gap-3 items-center justify-center absolute top-5'>
         <img src="logo.png" alt="logo" className='w-10 h-auto rounded-full logo-glow' />
@@ -162,6 +152,5 @@ const handlePassChange = (event) => {
       {loading && <div className='w-screen h-screen fixed z-[1111] flex justify-center items-center bg-[#000000ea]'>
         <img src="loader.svg" alt="loading.."/></div>}
     </div>
-    </>
   )
 }
