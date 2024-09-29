@@ -51,7 +51,7 @@ export default function Req({plan, status, amount, date, img , user, userId, id,
       to_email: user? user : 'amasimarvellous@gmail.com',
       page_to: 'dashboard',
       type: 'notification from 4Elevenfxtrade',
-      message: `Hi ${username || 'dear'}, your payment of ${amount} failed, please contact our customer service: 4elevenfxtrade@gmail.com`,
+      message: `Hi ${username || 'dear'}, your payment of ${amount} failed, please contact our customer service: info@4xeleventrade.store`,
     };
 
     const selectedData = {
