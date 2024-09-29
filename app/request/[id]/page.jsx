@@ -53,7 +53,7 @@ export default function page({params}) {
     page_to: 'dashboard',
   type: 'notification from 4Elevenfxtrade',
     to_email: selectedData?.user,
-    message: `Hi ${selectedData?.username || 'dear'}, your payment of ${amount} failed, please contact our customer service: 4elevenfxtrade@gmail.com`,
+    message: `Hi ${selectedData?.username || 'dear'}, your payment of ${amount} failed, please contact our customer service: info@4xelevenfxtrade.store`,
   };
 
   const handleReject = async () => {
