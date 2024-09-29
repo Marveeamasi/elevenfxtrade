@@ -47,7 +47,7 @@ export default function With({plan, status,amount,date,id,userId,user,address,pa
         to_email: user? user : 'amasimarvellous@gmail.com',
         page_to: 'dashboard',
         type: 'notification from 4Elevenfxtrade',
-        message: `Hi ${username || 'dear'}, your withdrawal of ${amount} from ${plan} has been approved, incase you haven't been credited in less than 23 hrs please contact our customer service: 4elevenfxtrade@gmail.com`, 
+        message: `Hi ${username || 'dear'}, your withdrawal of ${amount} from ${plan} has been approved, incase you haven't been credited in less than 23 hrs please contact our customer service: info@4xeleventrade.store`, 
     };
   
     const templateParamsForReject = {
@@ -56,7 +56,7 @@ export default function With({plan, status,amount,date,id,userId,user,address,pa
         to_email: user? user : 'amasimarvellous@gmail.com',
         page_to: 'dashboard',
         type: 'notification from 4Elevenfxtrade',
-        message: `Hi ${username || 'dear'}, your withdrawal of ${amount} from ${plan} failed, please contact our customer service: 4elevenfxtrade@gmail.com`, 
+        message: `Hi ${username || 'dear'}, your withdrawal of ${amount} from ${plan} failed, please contact our customer service: info@4xeleventrade.store`, 
      };
   
     const handleReject = async () => {
