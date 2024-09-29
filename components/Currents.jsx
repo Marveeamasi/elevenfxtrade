@@ -61,7 +61,7 @@ function handleUpdateCurrent(){
       calculatedAmount = remainder? remainder + interestEarned : parseFloat(initial) + interestEarned;
 
       const daysUntilNextPay = 7 - (daysElapsed % 7);
-      calculatedNextPay = daysUntilNextPay === 7 ? 0 : daysUntilNextPay;
+      calculatedNextPay = daysUntilNextPay === 7 ? 7 : daysUntilNextPay;
   } else {
       calculatedOverdue = daysElapsed - duration;
       const totalDurationWeeks = Math.floor(duration / 7);
@@ -87,7 +87,7 @@ function handleUpdateCurrent(){
       <h1 className='text-sm text=[#a2a1ab]'>{plan}</h1>
       <div className='text-[#eee] text-center'>{overdue
           ? `Overdue by ${overdue} day(s)`
-          : `+${rate}% in the next ${nextPay=0? 7 : nextPay} day(s)`}</div>
+          : `+${rate}% in the next ${nextPay} day(s)`}</div>
       <div className='flex flex-col justify-center items-center w-full gap-5'>
         <div className='flex items-center gap-2 flex-wrap w-full'>
           <CountUp start={0} end={currentAmount} duration={2} separator="," className='font-bold text-lg'/>
